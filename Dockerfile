@@ -1,24 +1,14 @@
-FROM ubuntu:22.04
+FROM node:16 as builder
+COPY . /app
+WORKDIR /app
+RUN npm install
+RUN npm i -g @angular/cli@16.2.10
 
-RUN apt update 
-RUN apt install -y openjdk-19-jre
-RUN apt install -y maven
+RUN npm run build --prod
 
-COPY api/ /api
 
-WORKDIR /api
-
-RUN mvn package
-
-WORKDIR /api/target
-
-CMD [ "java", "-jar","tlcdemoApp-1.0.0-SNAPSHOT.jar" ]
-
-# FROM openjdk:11
-
-# RUN apt-get update 
-# RUN mkdir ./application
-
-# COPY --from=build /api/target/*.jar ./application/app.jar
-
-# ENTRYPOINT [ "java", "./application/app.jar" ]
+FROM nginx
+WORKDIR /
+COPY --from=builder /app/dist/tlcfront /usr/share/nginx/html
+# COPY ./nginx.conf /etc/nginx/nginx.conf
+EXPOSE 4200
