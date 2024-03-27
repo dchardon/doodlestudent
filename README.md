@@ -24,7 +24,7 @@ On accède à la l'application via le navigateur : http://tp2tlccr.istic.univ-re
 
 Tâche 3
 
-Configuration du fichier etc/hosts
+Configuration du fichier hosts
 
 Tâche 4 
 
