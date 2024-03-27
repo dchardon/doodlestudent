@@ -32,9 +32,7 @@ Configuration ufw pour le firewall
 
 Tâche 4
 
-Le diagramme de déploiement réalisé pour le moment sur notre machine virtuelle
-
-https://camo.githubusercontent.com/114d65463a1414ee2aed44608c01ec117eaa92147d07b4d88e953937b11d6aba/68747470733a2f2f636f64696d642e6d6174682e636e72732e66722f75706c6f6164732f75706c6f61645f35333663303664373135346530643431376635373565346636393531633036612e706e67
+Diagramme de déploiement :  https://github.com/dchardon/doodlestudent/blob/main/diagramme.png
 
 Aventure 2: Chaîne de monitoring de l’application en production.
 
