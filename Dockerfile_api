@@ -1,10 +1,12 @@
-FROM fabric8/java-alpine-openjdk11-jre as production
-FROM maven:3.8.6-openjdk-11-slim as compilation
-WORKDIR /app/src/
-COPY api/ .
-RUN mvn package -DskipTests=true -Dquarkus.package.type=uber-jar
+FROM ubuntu:22.04
+
+RUN apt update 
+RUN apt install -y openjdk-19-jre
+RUN apt install -y maven
+COPY api/ /api
+WORKDIR /api
+RUN mvn compile quarkus:dev && mvn package && ./mvw install
 WORKDIR /app
-FROM production
-COPY --from=compilation /app/src/target/tlcdemoApp-1.0.0-SNAPSHOT-runner.jar .
+RUN mvn compile quarkus:dev && mvn package && ./mvw install 
+CMD ["java", "-Djava.library.path=target/lib", "-jar", "target/tlcdemoApp-1.0.0-SNAPSHOT-runner.jar"]
 EXPOSE 8080
-CMD ["java","-jar","tlcdemoApp-1.0.0-SNAPSHOT-runner.jar"]
