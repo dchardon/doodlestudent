@@ -34,6 +34,6 @@ Tâche 4
 
 Diagramme de déploiement :  https://github.com/dchardon/doodlestudent/blob/main/diagramme.png
 
-Aventure 2: Chaîne de monitoring de l’application en production.
+Aventure 2 : Chaîne de monitoring de l’application en production.
 
 On a ajouté les configurations pour le monitoring de l’application (Promotheus, grafana et munin) dans le fichier "docker-compose.yml" 
