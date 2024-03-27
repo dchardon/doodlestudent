@@ -32,6 +32,9 @@ Configuration letsencrypt pour le certificat côté serveur
 
 Configuration ufw pour le firewall
 
+https://github.com/dchardon/doodlestudent/assets/164950372/2a6626ea-5aef-4973-8e20-f62f09e38637
+
+
 Tâche 4
 
 Diagramme de déploiement :  https://github.com/dchardon/doodlestudent/blob/main/diagramme.png
